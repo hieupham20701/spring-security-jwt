@@ -24,26 +24,26 @@ public class SercurityDemoApplication {
 		return new BCryptPasswordEncoder();
 	}
 
-	@Bean
-	CommandLineRunner runner(UserService userService){
-		return args -> {
-			userService.saveRole(new Role(null,"ROLE_USER"));
-			userService.saveRole(new Role(null,"ROLE_MANAGER"));
-			userService.saveRole(new Role(null,"ROLE_ADMIN"));
-			userService.saveRole(new Role(null,"ROLE_SUPER_ADMIN"));
-
-			userService.saveUser(new User(null,"Hieu Pham","hieupham","1234",new ArrayList<>()));
-			userService.saveUser(new User(null,"Duong Tran","duongtran","1234",new ArrayList<>()));
-			userService.saveUser(new User(null,"Vy Pham","vypham","1234",new ArrayList<>()));
-			userService.saveUser(new User(null,"Bao Pham","baopham","1234",new ArrayList<>()));
-
-
-			userService.addRoletoUser("hieupham","ROLE_USER");
-			userService.addRoletoUser("duongtran","ROLE_MANAGER");
-			userService.addRoletoUser("vypham","ROLE_ADMIN");
-			userService.addRoletoUser("hieupham","ROLE_ADMIN");
-			userService.addRoletoUser("baopham","ROLE_USER");
-
-		};
-	}
+//	@Bean
+//	CommandLineRunner runner(UserService userService){
+//		return args -> {
+//			userService.saveRole(new Role(null,"ROLE_USER"));
+//			userService.saveRole(new Role(null,"ROLE_MANAGER"));
+//			userService.saveRole(new Role(null,"ROLE_ADMIN"));
+//			userService.saveRole(new Role(null,"ROLE_SUPER_ADMIN"));
+//
+//			userService.saveUser(new User(null,"Hieu Pham","hieupham","1234",new ArrayList<>()));
+//			userService.saveUser(new User(null,"Duong Tran","duongtran","1234",new ArrayList<>()));
+//			userService.saveUser(new User(null,"Vy Pham","vypham","1234",new ArrayList<>()));
+//			userService.saveUser(new User(null,"Bao Pham","baopham","1234",new ArrayList<>()));
+//
+//
+//			userService.addRoletoUser("hieupham","ROLE_USER");
+//			userService.addRoletoUser("duongtran","ROLE_MANAGER");
+//			userService.addRoletoUser("vypham","ROLE_ADMIN");
+//			userService.addRoletoUser("hieupham","ROLE_ADMIN");
+//			userService.addRoletoUser("baopham","ROLE_USER");
+//
+//		};
+//	}
 }

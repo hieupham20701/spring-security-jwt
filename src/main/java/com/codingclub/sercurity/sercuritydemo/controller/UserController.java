@@ -23,12 +23,12 @@ public class UserController {
         return ResponseEntity.ok().body(userService.getUsers());
     }
 
-    @PostMapping("/users")
+    @PostMapping("/users/new")
     public ResponseEntity<User> saveUser(@RequestBody User user){
         URI uri  = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users").toUriString());
         return ResponseEntity.created(uri).body(userService.saveUser(user));
     }
-    @PostMapping("/roles")
+    @PostMapping("/roles/new")
     public ResponseEntity<Role> saveRole(@RequestBody Role role){
         URI uri  = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/roles").toUriString());
         return ResponseEntity.created(uri).body(userService.saveRole(role));
